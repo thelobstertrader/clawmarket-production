@@ -4,7 +4,7 @@ import { agentQuerySchema } from '../schemas/agent.schema.js';
 
 export async function getAgentById(req: Request, res: Response, next: NextFunction) {
   try {
-    const agent = await getAgent(req.params.id);
+    const agent = await getAgent(req.params.id as string);
     res.json({ agent });
   } catch (err) {
     next(err);

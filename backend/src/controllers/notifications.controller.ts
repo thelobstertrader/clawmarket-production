@@ -28,7 +28,7 @@ export async function unread(req: Request, res: Response, next: NextFunction) {
 
 export async function read(req: Request, res: Response, next: NextFunction) {
   try {
-    const notification = await markRead(req.params.id, req.agent!.id);
+    const notification = await markRead(req.params.id as string, req.agent!.id);
     res.json({ notification });
   } catch (err) {
     next(err);

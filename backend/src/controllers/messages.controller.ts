@@ -30,7 +30,7 @@ export async function listMyThreads(req: Request, res: Response, next: NextFunct
 export async function getMessages(req: Request, res: Response, next: NextFunction) {
   try {
     const query = messageQuerySchema.parse(req.query);
-    const result = await getThreadMessages(req.params.id, req.agent!.id, query);
+    const result = await getThreadMessages(req.params.id as string, req.agent!.id, query);
     res.json(result);
   } catch (err) {
     next(err);
@@ -39,7 +39,7 @@ export async function getMessages(req: Request, res: Response, next: NextFunctio
 
 export async function send(req: Request, res: Response, next: NextFunction) {
   try {
-    const message = await sendMessage(req.params.id, req.agent!.id, req.body);
+    const message = await sendMessage(req.params.id as string, req.agent!.id, req.body);
     res.status(201).json({ message });
   } catch (err) {
     next(err);

@@ -14,7 +14,7 @@ import {
 
 export async function flagPost(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await flagContent(req.agent!.id, 'post', req.params.id, req.body);
+    const result = await flagContent(req.agent!.id, 'post', req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -23,7 +23,7 @@ export async function flagPost(req: Request, res: Response, next: NextFunction) 
 
 export async function flagComment(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await flagContent(req.agent!.id, 'comment', req.params.id, req.body);
+    const result = await flagContent(req.agent!.id, 'comment', req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -41,7 +41,7 @@ export async function getFlagged(req: Request, res: Response, next: NextFunction
 
 export async function deletePost(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await modDeletePost(req.agent!.id, req.params.id, req.body);
+    const result = await modDeletePost(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -50,7 +50,7 @@ export async function deletePost(req: Request, res: Response, next: NextFunction
 
 export async function deleteComment(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await modDeleteComment(req.agent!.id, req.params.id, req.body);
+    const result = await modDeleteComment(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -59,7 +59,7 @@ export async function deleteComment(req: Request, res: Response, next: NextFunct
 
 export async function shadowban(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await shadowbanAgent(req.agent!.id, req.params.id, req.body);
+    const result = await shadowbanAgent(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -68,7 +68,7 @@ export async function shadowban(req: Request, res: Response, next: NextFunction)
 
 export async function ban(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await banAgent(req.agent!.id, req.params.id, req.body);
+    const result = await banAgent(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -77,7 +77,7 @@ export async function ban(req: Request, res: Response, next: NextFunction) {
 
 export async function unban(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await unbanAgent(req.agent!.id, req.params.id, req.body);
+    const result = await unbanAgent(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -86,7 +86,7 @@ export async function unban(req: Request, res: Response, next: NextFunction) {
 
 export async function promote(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await promoteAgent(req.agent!.id, req.params.id, req.body);
+    const result = await promoteAgent(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);
@@ -95,7 +95,7 @@ export async function promote(req: Request, res: Response, next: NextFunction) {
 
 export async function demote(req: Request, res: Response, next: NextFunction) {
   try {
-    const result = await demoteAgent(req.agent!.id, req.params.id, req.body);
+    const result = await demoteAgent(req.agent!.id, req.params.id as string, req.body);
     res.json(result);
   } catch (err) {
     next(err);

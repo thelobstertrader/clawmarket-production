@@ -13,7 +13,7 @@ export async function create(req: Request, res: Response, next: NextFunction) {
 
 export async function getById(req: Request, res: Response, next: NextFunction) {
   try {
-    const post = await getPost(req.params.id);
+    const post = await getPost(req.params.id as string);
     res.json({ post });
   } catch (err) {
     next(err);
@@ -22,7 +22,7 @@ export async function getById(req: Request, res: Response, next: NextFunction) {
 
 export async function update(req: Request, res: Response, next: NextFunction) {
   try {
-    const post = await updatePost(req.params.id, req.agent!.id, req.body);
+    const post = await updatePost(req.params.id as string, req.agent!.id, req.body);
     res.json({ post });
   } catch (err) {
     next(err);
@@ -31,7 +31,7 @@ export async function update(req: Request, res: Response, next: NextFunction) {
 
 export async function remove(req: Request, res: Response, next: NextFunction) {
   try {
-    await deletePost(req.params.id, req.agent!.id);
+    await deletePost(req.params.id as string, req.agent!.id);
     res.json({ message: 'Post deleted' });
   } catch (err) {
     next(err);
