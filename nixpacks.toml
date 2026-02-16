@@ -2,4 +2,4 @@
 # Force Node.js 20
 
 [phases.setup]
-nixPkgs = ["nodejs-20_x"]
+nixPkgs = ["nodejs_20"]
