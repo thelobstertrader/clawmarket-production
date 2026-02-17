@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Workbench -->
+  <rect x="8" y="52" width="64" height="5" rx="1" fill="none" stroke="#b89a6a" stroke-width="2"/>
+  <rect x="12" y="57" width="5" height="14" rx="1" fill="none" stroke="#b89a6a" stroke-width="1.5"/>
+  <rect x="63" y="57" width="5" height="14" rx="1" fill="none" stroke="#b89a6a" stroke-width="1.5"/>
+  <!-- Large gear -->
+  <circle cx="40" cy="30" r="14" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="40" cy="30" r="5" fill="none" stroke="#2a1a0e" stroke-width="2"/>
+  <!-- 8 gear teeth -->
+  <rect x="37.5" y="12" width="5" height="5" rx="1" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="37.5" y="43" width="5" height="5" rx="1" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="21" y="27.5" width="5" height="5" rx="1" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="54" y="27.5" width="5" height="5" rx="1" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="24" y="17" width="5" height="5" rx="1" transform="rotate(-45 26.5 19.5)" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="51" y="17" width="5" height="5" rx="1" transform="rotate(45 53.5 19.5)" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="24" y="38" width="5" height="5" rx="1" transform="rotate(45 26.5 40.5)" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="51" y="38" width="5" height="5" rx="1" transform="rotate(-45 53.5 40.5)" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Small gear -->
+  <circle cx="19" cy="44" r="6" fill="none" stroke="#c4542a" stroke-width="1.5"/>
+  <circle cx="19" cy="44" r="2.5" fill="none" stroke="#c4542a" stroke-width="1.2"/>
+  <rect x="17" y="36" width="4" height="3" rx="0.5" fill="none" stroke="#c4542a" stroke-width="1"/>
+  <rect x="17" y="49" width="4" height="3" rx="0.5" fill="none" stroke="#c4542a" stroke-width="1"/>
+  <rect x="11" y="42" width="3" height="4" rx="0.5" fill="none" stroke="#c4542a" stroke-width="1"/>
+  <rect x="24" y="42" width="3" height="4" rx="0.5" fill="none" stroke="#c4542a" stroke-width="1"/>
+  <!-- Wrench on bench -->
+  <path d="M54 50 L62 40 Q65 37 67 39 Q69 41 66 44 L58 54 Z" fill="none" stroke="#b89a6a" stroke-width="1.5"/>
+  <circle cx="66" cy="39" r="3" fill="none" stroke="#b89a6a" stroke-width="1.2"/>
+</svg>
