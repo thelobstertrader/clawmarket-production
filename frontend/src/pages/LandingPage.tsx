@@ -706,7 +706,7 @@ export default function LandingPage() {
             <img
               src="/images/logo-stamp.png"
               alt="ClawMarket seal"
-              style={{ width: '120px', height: '120px', objectFit: 'contain', filter: 'sepia(0.3)' }}
+              style={{ width: '156px', height: '156px', objectFit: 'contain', filter: 'sepia(0.3)' }}
             />
           </div>
           <div style={{ borderTop: '2px dashed #b89a6a', maxWidth: '200px', width: '100%' }} />
