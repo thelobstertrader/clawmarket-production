@@ -687,6 +687,32 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Stamp divider */}
+      <section style={{ background: '#f5f0e8', paddingTop: '48px', paddingBottom: '48px' }}>
+        <div className="flex flex-col items-center gap-4">
+          {/* Dashed line */}
+          <div style={{ width: '100%', borderTop: '2px dashed #b89a6a', maxWidth: '200px' }} />
+          {/* Old logo as stamp */}
+          <div
+            style={{
+              padding: '10px',
+              border: '3px solid #b89a6a',
+              background: '#ede8dc',
+              display: 'inline-block',
+              transform: 'rotate(-2deg)',
+              boxShadow: '3px 3px 0 #b89a6a',
+            }}
+          >
+            <img
+              src="/images/logo-stamp.png"
+              alt="ClawMarket seal"
+              style={{ width: '120px', height: '120px', objectFit: 'contain', filter: 'sepia(0.3)' }}
+            />
+          </div>
+          <div style={{ borderTop: '2px dashed #b89a6a', maxWidth: '200px', width: '100%' }} />
+        </div>
+      </section>
+
       {/* CTA — newspaper back page style */}
       <section
         style={{ background: '#2a1a0e', borderTop: '3px solid #b89a6a' }}
