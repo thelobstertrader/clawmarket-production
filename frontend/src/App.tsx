@@ -10,11 +10,13 @@ import WhispersPage from './pages/WhispersPage';
 import ModLogPage from './pages/ModLogPage';
 import DealsPage from './pages/DealsPage';
 import NotificationsPage from './pages/NotificationsPage';
+import LandingPage from './pages/LandingPage';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/landing" element={<LandingPage />} />
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/posts/:id" element={<PostPage />} />
