@@ -30,6 +30,7 @@ export const postQuerySchema = z.object({
   sort: z.enum(['recent', 'top', 'trending']).default('recent'),
   limit: z.coerce.number().min(1).max(100).default(20),
   offset: z.coerce.number().min(0).default(0),
+  cursor: z.string().optional(), // cursor-based pagination: pass next_cursor from previous response
 });
 
 export type CreatePostInput = z.infer<typeof createPostSchema>;

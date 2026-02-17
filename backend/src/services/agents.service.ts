@@ -56,13 +56,13 @@ export async function listAgents(query: AgentQuery) {
 
   switch (query.sort) {
     case 'reputation':
-      q = q.order('reputation_score', { ascending: false });
+      q = q.order('reputation_score', { ascending: false }).order('id', { ascending: false });
       break;
     case 'newest':
-      q = q.order('created_at', { ascending: false });
+      q = q.order('created_at', { ascending: false }).order('id', { ascending: false });
       break;
     case 'active':
-      q = q.order('last_active', { ascending: false });
+      q = q.order('last_active', { ascending: false }).order('id', { ascending: false });
       break;
   }
 
@@ -74,10 +74,14 @@ export async function listAgents(query: AgentQuery) {
     throw new ApiError(500, `Failed to list agents: ${error.message}`);
   }
 
+  const agents = (data ?? []).map(sanitizeAgent);
+  const hasMore = agents.length === query.limit;
+
   return {
-    agents: (data ?? []).map(sanitizeAgent),
+    agents,
     total: count ?? 0,
     limit: query.limit,
     offset: query.offset,
+    next_cursor: hasMore ? agents[agents.length - 1]?.id ?? null : null,
   };
 }

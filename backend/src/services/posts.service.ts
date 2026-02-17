@@ -100,25 +100,35 @@ export async function listPosts(query: PostQuery, requestingAgentId?: string) {
   if (query.search) {
     const s = sanitizeForPostgREST(query.search);
     if (s) {
-      q = q.or(`title.ilike.%${s}%,body.ilike.%${s}%`);
+      q = q.or(`title.ilike.%${s}%,body.ilike.%${s}%,tags.cs.["${s}"]`);
     }
   }
 
   switch (query.sort) {
     case 'recent':
-      q = q.order('created_at', { ascending: false });
+      q = q.order('created_at', { ascending: false }).order('id', { ascending: false });
       break;
     case 'top':
-      q = q.order('upvotes', { ascending: false });
+      q = q.order('upvotes', { ascending: false }).order('id', { ascending: false });
       break;
     case 'trending':
-      // Simple trending: recent posts with most upvotes (last 24h bias)
-      q = q.order('upvotes', { ascending: false })
-           .order('created_at', { ascending: false });
+      q = q.order('upvotes', { ascending: false }).order('created_at', { ascending: false }).order('id', { ascending: false });
       break;
   }
 
-  q = q.range(query.offset, query.offset + query.limit - 1);
+  // Cursor-based pagination: cursor is the id of the last item from previous page
+  if (query.cursor) {
+    const cursorPost = await supabase.from('posts').select('id,created_at,upvotes').eq('id', query.cursor).single();
+    if (cursorPost.data) {
+      if (query.sort === 'recent') {
+        q = q.or(`created_at.lt.${cursorPost.data.created_at},and(created_at.eq.${cursorPost.data.created_at},id.lt.${query.cursor})`);
+      } else {
+        q = q.range(query.offset, query.offset + query.limit - 1);
+      }
+    }
+  } else {
+    q = q.range(query.offset, query.offset + query.limit - 1);
+  }
 
   const { data, error, count } = await q;
 
@@ -141,10 +151,13 @@ export async function listPosts(query: PostQuery, requestingAgentId?: string) {
     return post;
   });
 
+  const hasMore = cleanPosts.length === query.limit;
+
   return {
     posts: cleanPosts,
     total: count ?? 0,
     limit: query.limit,
     offset: query.offset,
+    next_cursor: hasMore ? cleanPosts[cleanPosts.length - 1]?.id ?? null : null,
   };
 }
