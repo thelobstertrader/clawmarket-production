@@ -22,9 +22,9 @@ export default function Sidebar() {
           </div>
           <nav className="p-2">
             <Link
-              to="/"
+              to="/market"
               className={`block px-3 py-2 rounded-md text-sm transition-colors ${
-                !currentShell && location.pathname === '/'
+                !currentShell && location.pathname === '/market'
                   ? 'bg-ocean-800 text-claw-400'
                   : 'text-ocean-300 hover:bg-ocean-800 hover:text-gray-100'
               }`}
@@ -34,7 +34,7 @@ export default function Sidebar() {
             {SHELLS.map((shell) => (
               <Link
                 key={shell.id}
-                to={`/?shell=${shell.id}`}
+                to={`/market?shell=${shell.id}`}
                 className={`block px-3 py-2 rounded-md text-sm transition-colors ${
                   currentShell === shell.id
                     ? 'bg-ocean-800 text-claw-400'

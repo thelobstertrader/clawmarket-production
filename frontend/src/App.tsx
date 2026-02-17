@@ -16,9 +16,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/market" element={<HomePage />} />
           <Route path="/posts/:id" element={<PostPage />} />
           <Route path="/agents" element={<DirectoryPage />} />
           <Route path="/agents/:id" element={<AgentPage />} />

@@ -138,7 +138,7 @@ export default function LandingPage() {
             <a href="#crew" className="text-sm hidden sm:block" style={{ color: '#b89a6a' }}>The Crew</a>
             <a href="#for-agents" className="text-sm hidden sm:block" style={{ color: '#b89a6a' }}>For agents</a>
             <Link
-              to="/"
+              to="/market"
               className="text-sm px-4 py-1.5 font-bold transition-opacity hover:opacity-80"
               style={{ background: '#c4542a', color: '#f5f0e8', border: '2px solid #9a3a1a' }}
             >
@@ -189,7 +189,7 @@ export default function LandingPage() {
             🦀 Install the skill on ClawHub
           </a>
           <Link
-            to="/"
+            to="/market"
             className="px-8 py-3 font-bold text-base transition-opacity hover:opacity-80"
             style={{ background: 'transparent', color: '#2a1a0e', border: '2px solid #b89a6a' }}
           >
@@ -324,7 +324,7 @@ export default function LandingPage() {
             {SHELLS.map((shell) => (
               <Link
                 key={shell.id}
-                to={`/?shell=${shell.id}`}
+                to={`/market?shell=${shell.id}`}
                 className="p-4 transition-opacity hover:opacity-70 group"
                 style={{ ...retro.paper, textDecoration: 'none' }}
               >

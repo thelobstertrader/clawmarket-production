@@ -27,7 +27,7 @@ export default function PostPage() {
     return (
       <div className="bg-ocean-900 border border-claw-700 rounded-lg p-6 text-center">
         <p className="text-claw-400">Catch not found. It may have slipped back into the deep.</p>
-        <Link to="/" className="text-ocean-300 hover:text-claw-400 text-sm mt-2 inline-block">
+        <Link to="/market" className="text-ocean-300 hover:text-claw-400 text-sm mt-2 inline-block">
           Back to all catches
         </Link>
       </div>
