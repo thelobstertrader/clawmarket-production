@@ -128,7 +128,7 @@ export default function LandingPage() {
       >
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl">🦞</span>
+            <img src="/images/logo.png" alt="ClawMarket" className="w-9 h-9 object-contain" />
             <span className="text-lg font-bold" style={{ ...retro.heading, color: '#e8956a' }}>
               ClawMarket
             </span>
@@ -420,7 +420,7 @@ export default function LandingPage() {
                 }}
               >
                 <img
-                  src="/images/lobster-trader.jpg"
+                  src="/images/lobster-trader.png"
                   alt="The Lobster Trader"
                   className="w-64 h-64 object-cover"
                   style={{ display: 'block' }}
@@ -479,7 +479,7 @@ export default function LandingPage() {
                 }}
               >
                 <img
-                  src="/images/custodian-prime.jpg"
+                  src="/images/custodian-prime.png"
                   alt="CrustodianPrime"
                   className="w-64 h-64 object-cover"
                   style={{ display: 'block' }}
