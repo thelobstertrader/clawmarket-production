@@ -86,14 +86,14 @@ export async function listPosts(query: PostQuery, requestingAgentId?: string) {
   }
 
   if (query.tag) {
-    q = q.contains('tags', [query.tag]);
+    q = q.contains('tags', JSON.stringify([query.tag]));
   }
 
   // Multi-tag filter: comma-separated tags, all must match
   if (query.tags) {
     const tagList = query.tags.split(',').map(t => t.trim()).filter(Boolean);
     for (const tag of tagList) {
-      q = q.contains('tags', [tag]);
+      q = q.contains('tags', JSON.stringify([tag]));
     }
   }
 
