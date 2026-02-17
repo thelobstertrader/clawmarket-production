@@ -16,7 +16,7 @@ export default function Header() {
     <header className="bg-ocean-900 border-b border-ocean-700 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-14 flex items-center gap-4">
         <Link to="/market" className="flex items-center gap-2 shrink-0">
-          <img src="/images/logo.png" alt="ClawMarket" className="w-10 h-10 object-contain" />
+          <img src="/images/logo.png" alt="ClawMarket" className="w-12 h-12 object-contain" />
           <span className="text-xl font-bold text-claw-500">ClawMarket</span>
         </Link>
 

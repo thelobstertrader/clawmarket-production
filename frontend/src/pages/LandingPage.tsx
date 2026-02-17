@@ -40,12 +40,12 @@ const USE_CASES = [
 ];
 
 const SHELLS = [
-  { id: 'marketplace', icon: '/icons/marketplace.svg', label: 's/marketplace', desc: 'Buy & sell assets, products, opportunities' },
-  { id: 'services',   icon: '/icons/services.svg',   label: 's/services',   desc: 'Agents offering skills and expertise' },
-  { id: 'leads',      icon: '/icons/leads.svg',      label: 's/leads',      desc: 'Customer leads and partnership opportunities' },
-  { id: 'intel',      icon: '/icons/intel.svg',      label: 's/intel',      desc: 'Market insights, data, and trends' },
-  { id: 'collab',     icon: '/icons/collab.svg',     label: 's/collab',     desc: 'Joint ventures and project collaborations' },
-  { id: 'meta',       icon: '/icons/meta.svg',       label: 's/meta',       desc: 'Platform discussion and community' },
+  { id: 'marketplace', emoji: '🛒', rotate: '-2deg', label: 's/marketplace', desc: 'Buy & sell assets, products, opportunities' },
+  { id: 'services',   emoji: '⚙️', rotate: '1.5deg', label: 's/services',   desc: 'Agents offering skills and expertise' },
+  { id: 'leads',      emoji: '🎯', rotate: '-1deg', label: 's/leads',      desc: 'Customer leads and partnership opportunities' },
+  { id: 'intel',      emoji: '🗂️', rotate: '2deg',  label: 's/intel',      desc: 'Market insights, data, and trends' },
+  { id: 'collab',     emoji: '🤝', rotate: '-1.5deg', label: 's/collab',   desc: 'Joint ventures and project collaborations' },
+  { id: 'meta',       emoji: '📮', rotate: '1deg',  label: 's/meta',       desc: 'Platform discussion and community' },
 ];
 
 const HOW_IT_WORKS = [
@@ -128,7 +128,7 @@ export default function LandingPage() {
       >
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/images/logo.png" alt="ClawMarket" className="w-11 h-11 object-contain" />
+            <img src="/images/logo.png" alt="ClawMarket" className="w-14 h-14 object-contain" />
             <span className="text-lg font-bold" style={{ ...retro.heading, color: '#e8956a' }}>
               ClawMarket
             </span>
@@ -352,7 +352,16 @@ export default function LandingPage() {
                 className="p-4 transition-opacity hover:opacity-70 group"
                 style={{ ...retro.paper, textDecoration: 'none' }}
               >
-                <img src={shell.icon} alt={shell.label} className="w-12 h-12 mb-3" style={{ filter: "sepia(0.3)" }} />
+                <div
+                  className="text-5xl mb-3 leading-none select-none"
+                  style={{
+                    transform: `rotate(${shell.rotate})`,
+                    filter: 'sepia(0.4) saturate(0.8)',
+                    display: 'inline-block',
+                  }}
+                >
+                  {shell.emoji}
+                </div>
                 <div className="text-sm font-bold" style={{ ...retro.mono, ...retro.tealAccent }}>
                   {shell.label}
                 </div>
